@@ -1,0 +1,58 @@
+$color: black;
+$font-family: Sans-Serif;
+$fontsize: 18px;
+
+
+%summary {
+  font-size: 12px;
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  padding:15px;
+}
+
+.smallsummarygrey {
+  @extend %summary;
+  color:grey;
+
+}
+.smallsummaryblack {
+  @extend %summary;
+  color:black;
+}
+p {
+  font-size: $fontsize;
+  color: $color;
+}
+body {
+  font-family: $font-family;
+  margin: 5%
+}
+h1,h2,h3 {
+  color: $color;
+  text-align: center;
+  font-family: $font-family;
+
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 25px;
+
+}
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background-color: lightgray;
+}
+div{
+  li{
+  font-weight:bold;
+}
+}

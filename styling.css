@@ -1,0 +1,54 @@
+.smallsummaryblack, .smallsummarygrey {
+  font-size: 12px;
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.smallsummarygrey {
+  color: grey;
+}
+
+.smallsummaryblack {
+  color: black;
+}
+
+p {
+  font-size: 18px;
+  color: black;
+}
+
+body {
+  font-family: Sans-Serif;
+  margin: 5%;
+}
+
+h1, h2, h3 {
+  color: black;
+  text-align: center;
+  font-family: Sans-Serif;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 25px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background-color: lightgray;
+}
+
+div li {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styling.css.map */
