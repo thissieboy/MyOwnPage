@@ -1,4 +1,3 @@
-# Project 1
+# Project 0
 
 Web Programming with Python and JavaScript
-"# CS50project1" 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="styles.css">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="styles.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="/static/style.css" type="text/css">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+<!--The nav code implements the navigation bar.-->
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url_for('home') }}" brand="Book site">Book Site</a>
+          </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ url_for('home') }}">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ url_for('search') }}">Search</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% if session['logged_in']==False %}
+        <li><a href="{{ url_for('home') }}">Login</a></li>
+      {% else %}
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      {% endif %}
+      </ul>
+    </div>
+
+</nav>
+
+        <h1>{% block heading %}{% endblock %}</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <h3 style="color: white; text-align: center;"> {{ message }} </h3>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+    <section class="section">
+        <div class="container is-desktop">
+
+            {% if message %}
+                <div>{{ message }}</div>
+            {% endif %}
+            {% if results %}
+                <table class="table is-striped is-fullwidth">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Authors</th>
+                        <th>Year</th>
+                        <th>ISBN</th>
+                    </tr>
+                    </thead>
+                    {% for book in results %}
+                        <tr>
+                            <td><a href="{{ url_for('book', book_id=book.id) }}" title="{{ book.title }}">{{ book.title }}</a></td>
+                            <td>{{ book.authors }}</td>
+                            <td>{{ book.year }}</td>
+                            <td>{{ book.isbn }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                No results.
+            {% endif %}
+            
+        </div>
+    </section>
+
+{% endblock %}
